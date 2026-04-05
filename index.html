@@ -31,16 +31,16 @@
       <a href="#domaines">Domaines</a>
       <a href="#contact">Contact</a>
     </div>
-    <button class="burger" aria-label="Menu">
+    <button class="burger" type="button" aria-label="Menu" onclick="this.classList.toggle('open'); document.querySelector('.mobile-menu').classList.toggle('open');">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <div class="mobile-menu">
-    <a href="#">Accueil</a>
-    <a href="#products">Notre cabinet</a>
-    <a href="#domaines">Domaines</a>
-    <a href="#contact">Contact</a>
+    <a href="#" onclick="document.querySelector('.burger').classList.remove('open'); document.querySelector('.mobile-menu').classList.remove('open');">Accueil</a>
+    <a href="#products" onclick="document.querySelector('.burger').classList.remove('open'); document.querySelector('.mobile-menu').classList.remove('open');">Notre cabinet</a>
+    <a href="#domaines" onclick="document.querySelector('.burger').classList.remove('open'); document.querySelector('.mobile-menu').classList.remove('open');">Domaines</a>
+    <a href="#contact" onclick="document.querySelector('.burger').classList.remove('open'); document.querySelector('.mobile-menu').classList.remove('open');">Contact</a>
   </div>
 
   <!-- ── HERO ── -->
@@ -78,7 +78,9 @@
           <p>Chaque situation juridique est unique. Nous analysons votre dossier en profondeur pour construire la meilleure défense possible. Notre équipe pluridisciplinaire vous accompagne à chaque étape de la procédure.</p>
           <a class="card-link" href="#">Découvrir notre méthode →</a>
         </div>
-       
+        <div class="right">
+          <img src="https://images.unsplash.com/photo-1521791055366-0d553872952f?w=700&q=80" alt="Stratégie juridique">
+        </div>
       </div>
 
     </div>
@@ -91,27 +93,27 @@
 
     <div class="domaines-grid">
       <div class="domaine-item">
-        <div class="domaine-icon"></div>
+        <div class="domaine-icon">⚖️</div>
         <h3>Droit pénal</h3>
         <p>Défense et représentation devant les juridictions pénales.</p>
       </div>
       <div class="domaine-item">
-        <div class="domaine-icon"></div>
+        <div class="domaine-icon">🏢</div>
         <h3>Droit des affaires</h3>
         <p>Accompagnement juridique des entreprises et entrepreneurs.</p>
       </div>
       <div class="domaine-item">
-        <div class="domaine-icon"></div>
+        <div class="domaine-icon">👨‍👩‍👧</div>
         <h3>Droit de la famille</h3>
         <p>Divorce, garde d'enfants, successions et héritage.</p>
       </div>
       <div class="domaine-item">
-        <div class="domaine-icon"></div>
+        <div class="domaine-icon">🏠</div>
         <h3>Droit immobilier</h3>
         <p>Transactions, litiges locatifs et copropriété.</p>
       </div>
       <div class="domaine-item">
-        <div class="domaine-icon"></div>
+        <div class="domaine-icon">📋</div>
         <h3>Droit du travail</h3>
         <p>Protection des salariés et conseil aux employeurs.</p>
       </div>
@@ -121,6 +123,7 @@
   <!-- ── FOOTER ── -->
   <footer id="contact">
     <p>© 2025 Cabinet Maître Benali. Tous droits réservés.</p>
+    <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7b1814150f1a180f3b161a120f091e56191e151a1712550f15">[email&#160;protected]</a></span>
   </footer>
 
   <!-- ── WHATSAPP BUTTON ── -->

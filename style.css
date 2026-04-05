@@ -487,6 +487,7 @@ footer span { font-size: 13px; color: var(--gold); letter-spacing: 1px; }
 ════════════════════════════ */
 @media (max-width: 768px) {
   nav { padding: 0 20px; height: 64px; }
+  .mobile-menu { top: 64px; }
 
   .onglets { display: none; }
   .burger  { display: flex; }
