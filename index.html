@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maître Benali — Cabinet d'Avocat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav>
+    <a href="#" style="display:inline-flex;align-items:center;text-decoration:none;">
+      <svg width="120" height="46" viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
+        <rect x="72" y="14" width="36" height="4" rx="1" fill="#f5f0e8"/>
+        <rect x="75" y="18" width="4" height="40" rx="1" fill="#f5f0e8"/>
+        <rect x="83" y="18" width="4" height="40" rx="1" fill="#f5f0e8"/>
+        <rect x="91" y="18" width="4" height="40" rx="1" fill="#f5f0e8"/>
+        <rect x="99" y="18" width="4" height="40" rx="1" fill="#f5f0e8"/>
+        <rect x="72" y="58" width="36" height="4" rx="1" fill="#f5f0e8"/>
+        <rect x="68" y="62" width="44" height="5" rx="1" fill="#b8962e"/>
+        <text x="90" y="83" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#f5f0e8" letter-spacing="3">BENALI</text>
+        <text x="90" y="95" text-anchor="middle" font-family="Georgia, serif" font-size="7.5" fill="#b8962e" letter-spacing="4">CABINET D'AVOCAT</text>
+        <line x1="50" y1="100" x2="130" y2="100" stroke="#b8962e" stroke-width="0.5" opacity=".5"/>
+      </svg>
+    </a>
+    <div class="onglets">
+      <a href="#">Accueil</a>
+      <a href="#products">Notre cabinet</a>
+      <a href="#domaines">Domaines</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <header>
+    <h1>Maître Benali</h1>
+    <p class="header-subtitle">Cabinet d'avocat — Tunis</p>
+    <div class="header-rule"></div>
+    <p>Nous défendons vos droits avec rigueur et engagement. Une expertise juridique au service de vos intérêts depuis plus de 20 ans.</p>
+    <button onclick="document.querySelector('#products').scrollIntoView({behavior:'smooth'})">Prendre rendez-vous</button>
+  </header>
+
+  <!-- ── SECTION CABINET ── -->
+  <section class="main" id="products">
+    <p class="section-label">Notre cabinet</p>
+    <h2 class="section-title">Ce qui nous définit</h2>
+
+    <div class="content">
+
+      <div class="card">
+        <div class="left">
+          <p class="card-number">01 — Nos valeurs</p>
+          <h1>Intégrité &amp; engagement</h1>
+          <p>Notre cabinet est fondé sur des principes inébranlables : honnêteté, confidentialité et dévouement total à chaque client. Chaque dossier est traité avec la même rigueur, qu'il s'agisse d'un particulier ou d'une grande entreprise.</p>
+          <a class="card-link" href="#">En savoir plus →</a>
+        </div>
+        <div class="right">
+          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=700&q=80" alt="Cabinet avocat">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="left">
+          <p class="card-number">02 — Notre approche</p>
+          <h1>Une stratégie sur mesure</h1>
+          <p>Chaque situation juridique est unique. Nous analysons votre dossier en profondeur pour construire la meilleure défense possible. Notre équipe pluridisciplinaire vous accompagne à chaque étape de la procédure.</p>
+          <a class="card-link" href="#">Découvrir notre méthode →</a>
+        </div>
+       
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── DOMAINES D'EXPERTISE ── -->
+  <section class="domaines" id="domaines">
+    <p class="section-label">Expertise</p>
+    <h2 class="section-title">Nos domaines d'intervention</h2>
+
+    <div class="domaines-grid">
+      <div class="domaine-item">
+        <div class="domaine-icon"></div>
+        <h3>Droit pénal</h3>
+        <p>Défense et représentation devant les juridictions pénales.</p>
+      </div>
+      <div class="domaine-item">
+        <div class="domaine-icon"></div>
+        <h3>Droit des affaires</h3>
+        <p>Accompagnement juridique des entreprises et entrepreneurs.</p>
+      </div>
+      <div class="domaine-item">
+        <div class="domaine-icon"></div>
+        <h3>Droit de la famille</h3>
+        <p>Divorce, garde d'enfants, successions et héritage.</p>
+      </div>
+      <div class="domaine-item">
+        <div class="domaine-icon"></div>
+        <h3>Droit immobilier</h3>
+        <p>Transactions, litiges locatifs et copropriété.</p>
+      </div>
+      <div class="domaine-item">
+        <div class="domaine-icon"></div>
+        <h3>Droit du travail</h3>
+        <p>Protection des salariés et conseil aux employeurs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer id="contact">
+    <p>© 2025 Cabinet Maître Benali. Tous droits réservés.</p>
+    <span>contact@maitre-benali.tn</span>
+  </footer>
+
+  <!-- ── WHATSAPP BUTTON ── -->
+  <a class="whatsapp-btn" href="#" onclick="return false;" aria-label="Nous contacter sur WhatsApp">
+    <div class="whatsapp-ring"></div>
+    <div class="whatsapp-ring whatsapp-ring--delay"></div>
+    <svg class="whatsapp-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.83 1.782 6.86L2 30l7.338-1.742A13.93 13.93 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5a11.43 11.43 0 01-5.834-1.6l-.418-.248-4.354 1.034 1.072-4.24-.272-.435A11.46 11.46 0 014.5 16C4.5 9.648 9.648 4.5 16 4.5S27.5 9.648 27.5 16 22.352 27.5 16 27.5zm6.29-8.618c-.344-.172-2.036-1.004-2.352-1.118-.316-.116-.546-.172-.776.172-.23.344-.89 1.118-1.09 1.348-.2.23-.4.258-.744.086-.344-.172-1.452-.536-2.766-1.708-1.022-.912-1.712-2.038-1.912-2.382-.2-.344-.022-.53.15-.702.154-.154.344-.4.516-.6.172-.2.23-.344.344-.574.116-.23.058-.43-.028-.602-.086-.172-.776-1.872-1.064-2.562-.28-.672-.564-.58-.776-.59-.2-.01-.43-.012-.66-.012s-.602.086-.918.43c-.316.344-1.204 1.176-1.204 2.866s1.232 3.324 1.404 3.554c.172.23 2.424 3.7 5.874 5.188.822.354 1.462.566 1.962.724.824.262 1.574.224 2.166.136.66-.098 2.036-.832 2.322-1.634.288-.8.288-1.488.202-1.632-.086-.144-.316-.23-.66-.4z"/>
+    </svg>
+    <span class="whatsapp-tooltip">Contactez-nous</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
