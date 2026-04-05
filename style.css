@@ -34,17 +34,9 @@ nav {
   justify-content: space-between;
   padding: 0 60px;
   height: 70px;
-  background: rgba(13, 27, 42, 0.92);
+  background: rgba(13, 27, 42, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(184,150,46,.25);
-}
-
-nav h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--gold);
-  letter-spacing: 1px;
 }
 
 .onglets {
@@ -64,7 +56,63 @@ nav h1 {
 
 .onglets a:hover { color: var(--gold-light); }
 
-/* ── HEADER avec image Justice ── */
+/* Burger menu (mobile) */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+
+.burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Menu mobile déroulant */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px; left: 0; right: 0;
+  background: rgba(13,27,42,.98);
+  border-bottom: 1px solid rgba(184,150,46,.2);
+  padding: 20px 0;
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.mobile-menu.open { display: flex; }
+
+.mobile-menu a {
+  width: 100%;
+  text-align: center;
+  padding: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.75);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  transition: color .2s, background .2s;
+}
+
+.mobile-menu a:hover { color: var(--gold-light); background: rgba(184,150,46,.05); }
+
+/* ── HEADER ── */
 header {
   min-height: 100vh;
   display: flex;
@@ -75,29 +123,25 @@ header {
   padding: 100px 40px 60px;
   position: relative;
   overflow: hidden;
-
-  /* Image de fond justice */
   background-image: url('https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=1800&q=80');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-/* Overlay sombre pour lisibilité */
 header::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(8, 15, 24, 0.78) 0%,
-    rgba(13, 27, 42, 0.85) 60%,
-    rgba(8, 15, 24, 0.92) 100%
+    rgba(8,15,24,.78) 0%,
+    rgba(13,27,42,.85) 60%,
+    rgba(8,15,24,.92) 100%
   );
   z-index: 0;
 }
 
-/* Reflet doré */
 header::after {
   content: '';
   position: absolute;
@@ -111,7 +155,7 @@ header > * { position: relative; z-index: 1; }
 
 header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(48px, 7vw, 86px);
+  font-size: clamp(40px, 7vw, 86px);
   font-weight: 700;
   color: var(--white);
   line-height: 1.1;
@@ -190,7 +234,7 @@ header button:hover {
 .section-title {
   text-align: center;
   font-family: 'Playfair Display', serif;
-  font-size: 36px;
+  font-size: clamp(24px, 4vw, 36px);
   font-weight: 600;
   color: var(--navy);
   margin-bottom: 70px;
@@ -217,9 +261,7 @@ header button:hover {
   transition: box-shadow .3s;
 }
 
-.card:hover {
-  box-shadow: 0 20px 60px rgba(13,27,42,.08);
-}
+.card:hover { box-shadow: 0 20px 60px rgba(13,27,42,.08); }
 
 .card::before {
   content: '';
@@ -244,7 +286,7 @@ header button:hover {
 
 .left h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 32px;
+  font-size: clamp(22px, 3vw, 32px);
   font-weight: 600;
   color: var(--navy);
   line-height: 1.25;
@@ -316,10 +358,7 @@ header button:hover {
 
 .domaine-item:hover { background: rgba(184,150,46,.08); }
 
-.domaine-icon {
-  font-size: 28px;
-  margin-bottom: 14px;
-}
+.domaine-icon { font-size: 28px; margin-bottom: 14px; }
 
 .domaine-item h3 {
   font-family: 'Playfair Display', serif;
@@ -341,23 +380,17 @@ footer {
   background: #080f18;
   padding: 40px 60px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  gap: 8px;
+  text-align: center;
   border-top: 1px solid rgba(184,150,46,.2);
 }
 
-footer p {
-  font-size: 13px;
-  color: rgba(255,255,255,.35);
-}
+footer p { font-size: 13px; color: rgba(255,255,255,.35); }
+footer span { font-size: 13px; color: var(--gold); letter-spacing: 1px; }
 
-footer span {
-  font-size: 13px;
-  color: var(--gold);
-  letter-spacing: 1px;
-}
-
-/* ── WHATSAPP BUTTON ── */
+/* ── WHATSAPP ── */
 .whatsapp-btn {
   position: fixed;
   bottom: 32px;
@@ -380,21 +413,10 @@ footer span {
   box-shadow: 0 6px 28px rgba(37,211,102,.6);
 }
 
-.whatsapp-btn:hover .whatsapp-tooltip {
-  opacity: 1;
-  transform: translateX(0);
-}
+.whatsapp-btn:hover .whatsapp-tooltip { opacity: 1; transform: translateX(0); }
 
-/* Icône SVG */
-.whatsapp-icon {
-  width: 32px;
-  height: 32px;
-  fill: #ffffff;
-  position: relative;
-  z-index: 2;
-}
+.whatsapp-icon { width: 32px; height: 32px; fill: #ffffff; position: relative; z-index: 2; }
 
-/* Anneaux de pulsation */
 .whatsapp-ring {
   position: absolute;
   inset: 0;
@@ -404,16 +426,13 @@ footer span {
   opacity: 0;
 }
 
-.whatsapp-ring--delay {
-  animation-delay: 0.75s;
-}
+.whatsapp-ring--delay { animation-delay: 0.75s; }
 
 @keyframes waPulse {
   0%   { transform: scale(1);   opacity: .7; }
   100% { transform: scale(1.9); opacity: 0;  }
 }
 
-/* Tooltip */
 .whatsapp-tooltip {
   position: absolute;
   right: 70px;
@@ -442,14 +461,89 @@ footer span {
   border-right: none;
 }
 
-/* ── RESPONSIVE ── */
+/* ════════════════════════════
+   TABLETTE  (768px – 1024px)
+════════════════════════════ */
+@media (max-width: 1024px) {
+  nav { padding: 0 32px; }
+
+  .main, .domaines { padding: 80px 40px; }
+
+  .card {
+    gap: 40px;
+    padding: 44px 40px;
+  }
+
+  .right { flex: 0 0 260px; }
+  .right img { height: 220px; }
+
+  .domaines-grid { grid-template-columns: repeat(3, 1fr); }
+
+  footer { padding: 36px 40px; }
+}
+
+/* ════════════════════════════
+   MOBILE   (< 768px)
+════════════════════════════ */
 @media (max-width: 768px) {
-  nav { padding: 0 24px; }
-  nav h1 { font-size: 18px; }
-  .onglets { gap: 20px; }
-  .main, .domaines { padding: 60px 24px; }
-  .card, .card:nth-child(even) { flex-direction: column; padding: 36px 28px; }
+  nav { padding: 0 20px; height: 64px; }
+
+  .onglets { display: none; }
+  .burger  { display: flex; }
+
+  header {
+    padding: 90px 24px 50px;
+    background-attachment: scroll;
+  }
+
+  header p { font-size: 15px; }
+
+  header button { padding: 13px 32px; width: 100%; max-width: 280px; }
+
+  .main { padding: 60px 20px; }
+
+  .section-title { margin-bottom: 40px; }
+
+  .content { gap: 32px; }
+
+  .card,
+  .card:nth-child(even) {
+    flex-direction: column;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+
+  .card::before,
+  .card:nth-child(even)::before {
+    left: 0; right: auto;
+    top: 0; bottom: auto;
+    width: 100%; height: 4px;
+  }
+
   .right { flex: none; width: 100%; }
-  footer { flex-direction: column; gap: 12px; text-align: center; padding: 30px 24px; }
+  .right img { height: 200px; }
+
+  .domaines { padding: 60px 20px; }
+
+  .domaines-grid { grid-template-columns: 1fr 1fr; }
+
+  .domaine-item { padding: 28px 20px; }
+
+  footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 28px 20px;
+  }
+
   .whatsapp-btn { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+  .whatsapp-icon { width: 26px; height: 26px; }
+}
+
+/* ════════════════════════════
+   PETIT MOBILE  (< 400px)
+════════════════════════════ */
+@media (max-width: 400px) {
+  .domaines-grid { grid-template-columns: 1fr; }
+  .header-subtitle { letter-spacing: 3px; font-size: 11px; }
 }

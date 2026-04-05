@@ -1,14 +1,22 @@
-// Nav : ombre au scroll
+// Nav shadow on scroll
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('nav');
-  if (window.scrollY > 10) {
-    nav.style.boxShadow = '0 4px 30px rgba(0,0,0,.4)';
-  } else {
-    nav.style.boxShadow = 'none';
-  }
+  nav.style.boxShadow = window.scrollY > 10 ? '0 4px 30px rgba(0,0,0,.4)' : 'none';
 });
 
-// Bouton header → scroll vers #products
-document.querySelector('header button').addEventListener('click', () => {
-  document.querySelector('#products').scrollIntoView({ behavior: 'smooth' });
+// Burger menu toggle
+const burger = document.querySelector('.burger');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+
+// Fermer le menu au clic sur un lien
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
 });
